@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:p="http://primefaces.org/ui"
+       xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>GEDCOM Parser</title>
+
+<h:outputStylesheet library="css" name="main.css"  /> 
+    </h:head>
+
+    <h:body>
+        
+        <h:form>
+            <p:layout   >
+                <p:layoutUnit position="west"  size="400"  resizable="false" >
+
+                    <p:fileUpload  label="Choose or Drag and Drop"  auto="true" value="#{gedView.file}" fileUploadListener="#{gedView.handleFileUpload}" mode="advanced" dragDropSupport="true"
+                                   update="xmloutputpanel" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(txt|ged)$/" />
+
+                </p:layoutUnit>
+
+                <p:layoutUnit  position="center">
+                    <h3 class="boxHeader">XML Output</h3>
+                    <p:outputPanel id ="xmloutputpanel">
+                        <p:growl id="messages" showDetail="true" />
+                        <p:inputTextarea   autoResize="false" value="#{gedView.outputXML}" />
+                    </p:outputPanel>
+                </p:layoutUnit>
+            </p:layout>
+
+
+        </h:form>
+    </h:body>
+</html>
+
