@@ -37,6 +37,12 @@ public class ProcessFile {
     //if the current depth is equal to the next line I will print the current node with its closure tag
     //if the current depth is greater than the next line I will print the current node and start printing the closing tags
     //if the current depth is less than the next depth I will print the node but I wont print its close tag because it has childs
+    //Hasmap used as key,value stack 
+    // I had to replace special chars for XML that
+    
+    //the time complexity O(N*M) where is M is the length of the string and N is the number of lines
+    //the space complexity is O(N)
+    
     public String ParseFile(InputStream CurrentFile) throws IOException {
         BufferedReader br = null;
         StringBuilder xmlBuilder = new StringBuilder();

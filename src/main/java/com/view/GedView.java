@@ -66,7 +66,7 @@ public class GedView implements Serializable {
     public void setOutputXML(String outputXML) {
         this.outputXML = outputXML;
     }
-
+//parse file and display the xml in the textarea
     public void handleFileUpload(FileUploadEvent event) {
         UploadedFile uploadedFile = event.getFile();
 
